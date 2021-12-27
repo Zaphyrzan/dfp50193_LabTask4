@@ -1,7 +1,7 @@
 <?php
-$term = $_GET['term'];
-$myfile = fopen("Files/$term", "r") or die("Unable to open file!");
-$data = fread($myfile, filesize("Files/$term"));
+$filename = $_GET['filename'];
+$myfile = fopen("Files/$filename", "r") or die("Unable to open file!");
+$term = fread($myfile, filesize("Files/$filename"));
 fclose($myfile);
 ?>
 <!DOCTYPE html>
@@ -18,10 +18,15 @@ fclose($myfile);
     <form method="post" action="save.php" name="Form">
         <table>
             <tr>
-                <tr><label for="name">Content</label></tr>
-                <td>
-                    <textarea id="term" type="text" step="any" name="term" required><?php echo $data; ?></textarea>
-                </td>
+            <td>
+                <input type="hidden" id="filename" name="filename" value="<?php echo $filename?>">
+            </td>
+            </tr>
+            <tr>
+            <tr><label for="name">Content</label></tr>
+            <td>
+                <textarea id="term" type="text" step="any" name="term" required><?php echo $term; ?></textarea>
+            </td>
             </tr>
             <tr>
                 <td>

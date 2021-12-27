@@ -15,7 +15,7 @@
 
     foreach ($Files as $key => $value) {
         if ('.' !== $value && '..' !== $value) {
-            echo "<li><a href='display.php?term=" . $value . "'>" . $value . "</a></li>";
+            echo "<li><a href='display.php?filename=" . $value . "'>" . $value . "</a></li>";
         }
     }
     ?>

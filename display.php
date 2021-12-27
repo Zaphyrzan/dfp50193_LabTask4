@@ -1,5 +1,5 @@
 <?php
-$term = $_GET['term'];
+$filename = $_GET['filename'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,13 +13,13 @@ $term = $_GET['term'];
 
 <body>
     <?php
-    $myfile = fopen("Files/$term", "r") or die("Unable to open file!");
-    echo nl2br(fread($myfile, filesize("Files/$term")));
+    $myfile = fopen("Files/$filename", "r") or die("Unable to open file!");
+    echo nl2br(fread($myfile, filesize("Files/$filename")));
     fclose($myfile);
     ?>
     <p></p>
-    <a href="update.php?term=<?php echo $term;?>">Overwrite Files</a>
+    <a href="update.php?filename=<?php echo $filename;?>">Update Files</a>
     <p></p>
-    <a href="delete.php?term=<?php echo $term;?>" onclick="return confirm('Are you sure you want to delete this file?')">Delete Files</a>
+    <a href="delete.php?filename=<?php echo $filename;?>" onclick="return confirm('Are you sure you want to delete this file?')">Delete Files</a>
 </body>
 </html>
