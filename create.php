@@ -18,7 +18,7 @@
             </td>
             </tr>
             <tr>
-            <tr><label for="content">Content</label></tr>
+            <td><label for="content">Content</label></tr>
             <td>
                 <textarea id="term" type="text" step="any" name="term"></textarea>
             </td>
